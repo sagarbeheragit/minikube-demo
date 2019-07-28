@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kubedemo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        editor: vscode
+    spec:
+      containers:
+      - name: kubedmeo
+        image: sagarsdocker/kubedemo:demo1
+        ports:
+        - containerPort: 8080
