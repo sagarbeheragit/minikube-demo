@@ -54,47 +54,45 @@ minikube dashboard -- (to view as dashboard)
 Cleanup:
 --------------------
 
-kubectl delete service kubedemo
-kubectl delete deployment kubedemo
+    kubectl delete service kubedemo
+    kubectl delete deployment kubedemo
 
-minikube stop
-
-minikube delete
+    minikube stop
+    minikube delete
 
 Kube details:
 ------------------------
 
-kubectl get deployments
-
-kubectl get pods
-
-kubectl get events
-
-kubectl config view
+    kubectl get deployments
+    kubectl get pods
+    kubectl get events
+    kubectl config view
 
 Using deployment file:
 --------------------------
 Deployment.yml
-kubeclt apply -f ./deployment.yml or kubectl create -f deployment.yaml
-kubectl expose deployment kubedemo --type=NodePort
+
+    kubeclt apply -f ./deployment.yml or kubectl create -f deployment.yaml
+    kubectl expose deployment kubedemo --type=NodePort
 
 
 Scale replicas : Scale the deployment
 -------------------------------------
-kubectl scale --replicas=4 deployment/kubedemo
+    kubectl scale --replicas=4 deployment/kubedemo
 
-expose the serive on to the LoadBalancer
-kubectl expose deployment kubedemo --type=LoadBalancer --port=8080 --target-port=8080 --name=kubedemo-loadbalancer
+**expose the serive on to the LoadBalancer**
+
+    kubectl expose deployment kubedemo --type=LoadBalancer --port=8080 --target-port=8080 --name=kubedemo-loadbalancer
 
 Update the image:
 ------------------------------------
-kubectl set image deployment/kubedemo containername=newImageName
-kubectl rollout status deployement/kubedemo
+    kubectl set image deployment/kubedemo containername=newImageName
+    kubectl rollout status deployement/kubedemo
 
 lable and Selectors:
 ----------------------
-Label the nodes and use selecotors to define deployment and tell kubernetes where to deploye the pods
-example:
+**Label the nodes and use selecotors to define deployment and tell kubernetes where to deploye the pods**
+
     kublectl lable node minikube storageType=SSD
     deployment.yml - nodeSelector: ssd
     then deploy again using kubectl apply command
