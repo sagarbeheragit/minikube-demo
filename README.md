@@ -95,9 +95,9 @@ lable and Selectors:
 ----------------------
 Label the nodes and use selecotors to define deployment and tell kubernetes where to deploye the pods
 example:
-        kublectl lable node minikube storageType=SSD
-        deployment.yml - nodeSelector: ssd
-        then deploy again using kubectl apply command
+    kublectl lable node minikube storageType=SSD
+    deployment.yml - nodeSelector: ssd
+    then deploy again using kubectl apply command
 
 Health Probles:
 ------------------------------------
