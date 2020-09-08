@@ -1,6 +1,8 @@
-# kubedemo
+# Kubernetes Demo
 This is simple example explaining the kubernetes demo
+
 # Docker File 
+
 The docker file uses the server.js file to implement a simple node application. You can build the image based on the dockerfile using thr docker build command.
 
 # Deployment.yml
@@ -9,7 +11,6 @@ This file is the input to the kubernetes cluster. Its a simple deployment file h
 You can use the kubectl apply commmand to deploy this deployment and then run kubectl expose command to expose this as a service.
 
 # Kubernetes commands with Minikune and kubectl
-
 
 Install: 
 ----------------------------
@@ -27,7 +28,9 @@ Deploy image from docker: DIrect deployment using image.
 --------------------------
 
     kubectl create deployment spring-demo --image=sagarsdocker/springbootapi:springapi2
+
 or 
+
     kubectl run deployname --image=k8s.gcr.io/echoserver:1.10 --port=8080
 
 
