@@ -1,6 +1,7 @@
 
 var http = require('http');
 
+//Demo
 var handleRequest = function(request, response) {
   console.log('Received request for URL: ' + request.url);
   response.writeHead(200);
