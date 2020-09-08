@@ -13,42 +13,44 @@ You can use the kubectl apply commmand to deploy this deployment and then run ku
 
 Install: 
 ----------------------------
-brew install kubernetes-cli
+    brew install kubernetes-cli
 
-Instal minikube:
-brew cask install minikube
+# Instal minikube:
 
-Start  Minikube:
+    brew cask install minikube
 
-minikube start
+# Start  Minikube:
+
+    minikube start
 
 Deploy image from docker: DIrect deployment using image.
 --------------------------
 
-kubectl create deployment spring-demo --image=sagarsdocker/springbootapi:springapi2
+    kubectl create deployment spring-demo --image=sagarsdocker/springbootapi:springapi2
 or 
-kubectl run deployname --image=k8s.gcr.io/echoserver:1.10 --port=8080
+    kubectl run deployname --image=k8s.gcr.io/echoserver:1.10 --port=8080
 
 
 Pod as a Kubernetes Service:
 ----------------------------
 
-kubectl expose deployment spring-demo1 --type=LoadBalancer --port=8080
+    kubectl expose deployment spring-demo1 --type=LoadBalancer --port=8080
 
 or 
 
-kubectl expose deployment spring-demo1 --type=NodePort
+    kubectl expose deployment spring-demo1 --type=NodePort
+
 The option --type=NodePort specifies the type of the Service.
 
-kubectl get services
+    kubectl get services
 
 Get the URL of the exposed Service to view the Service details:
 
-minikube service spring-demo1 --url  (to get URL)
+    minikube service spring-demo1 --url  (to get URL)
 
-minikube service spring-demo1   (To directly open in the URL)
+    minikube service spring-demo1   (To directly open in the URL)
 
-minikube dashboard -- (to view as dashboard)
+    minikube dashboard -- (to view as dashboard)
 
 
 Cleanup:
