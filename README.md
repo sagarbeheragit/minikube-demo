@@ -40,7 +40,7 @@ or
 
     kubectl expose deployment spring-demo1 --type=NodePort
 
-The option --type=NodePort specifies the type of the Service.
+_The option --type=NodePort specifies the type of the Service._
 
     kubectl get services
 
